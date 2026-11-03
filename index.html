@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budgie – Expense Tracker Bot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>💰 Budgie</h1>
+  <p>Your chat-based expense tracker</p>
+</header>
+<main>
+  <section class="cards">
+    <div class="card"><span>Balance</span><strong id="balance">₱0.00</strong></div>
+    <div class="card"><span>Income</span><strong id="income" class="pos">₱0.00</strong></div>
+    <div class="card"><span>Expenses</span><strong id="expenses" class="neg">₱0.00</strong></div>
+  </section>
+
+  <section class="panel">
+    <div class="row"><span>Monthly budget</span><span id="budgetText">Not set</span></div>
+    <div class="bar"><div id="budgetFill"></div></div>
+  </section>
+
+  <div class="grid">
+    <section class="panel chat">
+      <h2>Chat with Budgie</h2>
+      <div id="messages" aria-live="polite"></div>
+      <div class="chips">
+        <button type="button" data-msg="help">Help</button>
+        <button type="button" data-msg="summary">Summary</button>
+        <button type="button" data-msg="budget left">Budget left</button>
+        <button type="button" data-msg="undo">Undo</button>
+      </div>
+      <form id="chatForm">
+        <input id="chatInput" placeholder="Try “spent 150 on lunch”" autocomplete="off" aria-label="Message">
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Transactions</h2>
+      <ul id="list"></ul>
+      <h2>Spending by category</h2>
+      <div id="cats"></div>
+    </section>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
